@@ -45,23 +45,7 @@
         <section id="references">
             <h2>Řekli o mě</h2>
             <div id="carousel">
-                <div id="carousel-items">
-                    <div class="carousel-item">
-                        <p>"Tondo, ty seš fakt šaman. Už půl roku nemůžu v noci spát, podkládám si všelijak ruku i rameno, abych si aspoň trochu ulevila. Teď jsem spala poprvé celou noc. To je neuvěřitelný pocit."  </p><i>Margareta Janjic</i></p>
-                    </div>
-                    <div class="carousel-item">
-                        <p>"Ahoj, hybnost ruky je teď mnohem lepší a ty svaly mě nebolí, tak jak jsem čekala. Moc děkuji, nečekala jsem takový pokrok." </p><i>Milena Bartíková</i></p>
-                    </div>
-                    <div class="carousel-item">
-                        <p>"Díky Tondo, mé problémy s výhřezem v bederní páteři se začaly zlepšovat už po první návštěvě u tebe. Teď po čtyřech našich setkáních už jsem úplně bez potíží." </p><i>Milan Číž</i></p>
-                    </div>
-                    <div class="carousel-item">
-                        <p>"Pane Vondruško, musím se Vám pochlubit. Dřív jsem nemohl skoro vůbec chodit. Když jsem šel do garáže, kterou mám půl kilometru daleko, musel jsem si třikrát sednout. Teď jsem byl se ženou na výletě, vůbec mi nestačila a to jsme ušli tři kilometry!" </p><i>Stanislav Merta</i></p>
-                    </div>
-                    <div class="carousel-item">
-                        <p>"Tondo, když se mi podařil výhřez v krční páteři, už jsem věděla za kým mám, po úspěšném vyléčení ramene, jít. A i teď jsem úplně nedůvěřovala, když jsme začali jenom dýcháním. Ale teď už vím, že to byl správný postup a dostali jsme se přes různé uvolňování, rozhýbávání a cvičení až ke stavu, kdy se zase hýbu normálně." </p><i>Margareta Janjic</i></p>
-                    </div>
-                </div>
+                <div id="carousel-items"></div>
                 <div id="carousel-controls">
                     <button id="carousel-left">&lt;</button>
                     <button id="carousel-right">&gt;</button>
@@ -139,25 +123,57 @@
             }
         });
 
+        // Load references from JSON file
+        async function loadReferences() {
+            try {
+                const response = await fetch('references.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch references: ${response.status}`);
+                }
+                const references = await response.json();
+                const carouselItems = document.getElementById('carousel-items');
+
+                if (references.length === 0) {
+                    carouselItems.innerHTML = '<p>No references available.</p>';
+                    return;
+                }
+
+                references.forEach(reference => {
+                    const item = document.createElement('div');
+                    item.className = 'carousel-item';
+                    item.innerHTML = `<p>${reference.text}</p><i>${reference.author}</i>`;
+                    carouselItems.appendChild(item);
+                });
+
+                updateCarousel();
+            } catch (error) {
+                console.error('Error loading references:', error);
+                const carouselItems = document.getElementById('carousel-items');
+                carouselItems.innerHTML = '<p>Error loading references. Please try again later.</p>';
+            }
+        }
+
         // Carousel functionality
         const carousel = document.getElementById('carousel-items');
         const leftButton = document.getElementById('carousel-left');
         const rightButton = document.getElementById('carousel-right');
-        const items = document.querySelectorAll('.carousel-item');
         let currentIndex = 0;
 
         function updateCarousel() {
+            const items = document.querySelectorAll('.carousel-item');
             items.forEach((item, index) => {
                 item.style.display = index === currentIndex ? 'block' : 'none';
             });
         }
 
         leftButton.addEventListener('click', () => {
+            const items = document.querySelectorAll('.carousel-item');
             currentIndex = (currentIndex - 1 + items.length) % items.length;
             updateCarousel();
         });
 
         rightButton.addEventListener('click', () => {
+            const items = document.querySelectorAll('.carousel-item');
             currentIndex = (currentIndex + 1) % items.length;
             updateCarousel();
         });
@@ -170,6 +186,7 @@
 
         carousel.addEventListener('touchend', (e) => {
             const endX = e.changedTouches[0].clientX;
+            const items = document.querySelectorAll('.carousel-item');
             if (startX - endX > 50) {
                 currentIndex = (currentIndex + 1) % items.length;
             } else if (endX - startX > 50) {
@@ -179,7 +196,7 @@
         });
 
         // Initialize carousel
-        updateCarousel();
+        document.addEventListener('DOMContentLoaded', loadReferences);
     </script>
 </body>
 </html>
