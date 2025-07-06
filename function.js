@@ -23,7 +23,7 @@ document.querySelectorAll('#mobile-menu a').forEach(menuItem => {
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
         }
-        mobileMenu.classList.remove('visible'); // Hide menu after clicking a menu item
+        mobileMenu.classList.remove('visible'); // Explicitly hide the menu
     });
 });
 
