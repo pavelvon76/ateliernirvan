@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atelier Nirvan</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="function.js" defer></script>
+    <script src="function.js" async="true"></script>
 </head>
 <body>
     <header>
         <button id="menu-button">☰</button>
         <div id="siteName">Atelier Nirvan</div>
         <nav id="mobile-menu">
-            <ul>
+            <ul onclick="collapseMobileMenu()">
                 <li><a href="#home">Domů</a></li>
                 <li><a href="#references">Reference</a></li>
                 <li><a href="#yoga">Jóga</a></li>
@@ -22,7 +22,7 @@
             </ul>
         </nav>
         <nav id="desktop-menu">
-            <ul>
+            <ul onclick="collapseMobileMenu()">
                 <li><a href="#home">Domů</a></li>
                 <li><a href="#references">Reference</a></li>
                 <li><a href="#yoga">Jóga</a></li>
@@ -99,6 +99,12 @@
                 });
             });
         });
+
+        // Function to collapse the mobile menu
+        function collapseMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.remove('visible'); // Ensure the menu is hidden
+        }
 
         // Toggle mobile menu visibility
         const menuButton = document.getElementById('menu-button');

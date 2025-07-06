@@ -8,6 +8,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
+
 // Toggle mobile menu visibility
 const menuButton = document.getElementById('menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -23,9 +25,12 @@ document.querySelectorAll('#mobile-menu a').forEach(menuItem => {
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
         }
-        mobileMenu.classList.remove('visible'); // Explicitly hide the menu
+        collapseMobileMenu(); // Call the collapse function
     });
 });
+
+// Ensure the collapseMobileMenu function is globally accessible
+window.collapseMobileMenu = collapseMobileMenu;
 
 // Toggle "about" section visibility
 const aboutToggle = document.getElementById('about-toggle');

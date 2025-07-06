@@ -14,15 +14,16 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 50px; /* Reduce height by 20px */
     background-color: #8fa998; /* Light pine green background */
     color: #000; /* Ensure text color is black */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px; /* Add padding for better spacing */
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Vertically align items */
-    justify-content:space-between; /* Space items evenly */
+    justify-content: space-between; /* Space items evenly */
     font-family: Arial, sans-serif;
     z-index: 1002; /* Ensure header stays above other elements */
+    padding: 5px 20px; /* Adjust padding for better spacing */
 }
 
 #siteName {
@@ -55,7 +56,7 @@ header {
 }
 
 main {
-    margin-top: 60px; /* Adjust based on header height */
+    margin-top: 40px; /* Match the new header height */
     padding: 0;
 }
 
