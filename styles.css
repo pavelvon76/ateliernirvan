@@ -103,13 +103,14 @@ a:hover {
 
 /* Mobile menu styles */
 #mobile-menu {
-    display: none; /* Hide mobile menu when not visible */
+    position: absolute;
     top: 100%; /* Expand downward from the header */
-    left: 0;
-    width: 100%; /* Full width of the header */
+    left: 0; /* Align to the left */
+    width: 250px; /* Set a fixed width */
     background-color: #d9e2e6; /* Light gray stone background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
     overflow-y: auto; /* Enable scrolling if content exceeds height */
+    display: none; /* Initially hidden */
     z-index: 1000;
 }
 
@@ -117,10 +118,14 @@ a:hover {
     display: block; /* Show menu when toggled */
 }
 
-/* Ensure no white space appears when the mobile menu is hidden */
+/* Ensure mobile menu is visible only in mobile responsive views */
 @media (max-width: 768px) {
     #mobile-menu {
-        display: none; /* Ensure hidden menu does not affect layout */
+        display: none; /* Default hidden state */
+    }
+
+    #mobile-menu.visible {
+        display: block; /* Show menu when toggled */
     }
 
     #desktop-menu {

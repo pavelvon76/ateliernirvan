@@ -15,6 +15,18 @@ menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('visible');
 });
 
+// Collapse mobile menu when a menu item is clicked
+document.querySelectorAll('#mobile-menu a').forEach(menuItem => {
+    menuItem.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
+        }
+        mobileMenu.classList.remove('visible'); // Hide menu after clicking a menu item
+    });
+});
+
 // Toggle "about" section visibility
 const aboutToggle = document.getElementById('about-toggle');
 const aboutFull = document.getElementById('about-full');
