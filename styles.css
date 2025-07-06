@@ -1,21 +1,33 @@
+/* Add global font style */
 body {
-    font-family: 'Arial', sans-serif; /* More readable sans-serif font */
-    font-size: 1.2rem; /* Increase font size by 20% */
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Light blue sky background */
+    color: #333; /* Neutral text color for readability */
     margin: 0;
     padding: 0;
     line-height: 1.8;
-    background-color: rgba(245, 245, 220, 0.8); /* Light beige with transparency */
-    color: rgba(75, 63, 47, 0.9); /* Dark brown with slight transparency */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
-    background: rgba(139, 90, 43, 0.8); /* Warm wooden brown with transparency */
-    color: #fff;
-    padding: 2rem 0;
+    position: relative;
+    z-index: 1002; /* Ensure header stays above the menu */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8fa998; /* Light pine green background */
+    color: #fff; /* White text for visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; /* Add padding for better spacing */
     text-align: center;
-    font-family: 'Playfair Display', serif; /* Decorative font for headers */
-    position: relative; /* Ensure menu button can be positioned inside header */
+    font-family: Arial, sans-serif;
+}
+
+header h1,
+#siteName {
+    margin: 0;
+    font-size: 1.5em; /* Adjust font size for readability */
+    color: #fff; /* White text for visibility */
 }
 
 nav ul {
@@ -35,6 +47,7 @@ nav ul li a {
 }
 
 main {
+    margin-top: 60px; /* Adjust based on header height */
     padding: 0;
 }
 
@@ -53,47 +66,59 @@ section:nth-child(even) {
 }
 
 h2 {
-    font-family: 'Arial', sans-serif; /* Match body font for consistency */
     color: #8b5a2b; /* Warm brown for section titles */
     margin-bottom: 1rem;
-    font-size: 2.4rem; /* Increase font size by 20% */
+    font-size: 2rem;
 }
 
 p {
-    font-family: 'Arial', sans-serif; /* Match body font for consistency */
     color: #4b3f2f;
-    font-size: 1.32rem; /* Increase font size by 20% */
+    font-size: 1.1rem;
 }
 
 footer {
+    background-color: #d9e2e6; /* Light gray stone background */
+    color: #333; /* Neutral text color */
     text-align: center;
-    padding: 2rem 0;
-    background: rgba(139, 90, 43, 0.8); /* Warm brown with transparency */
-    color: #fff;
-    font-family: 'Playfair Display', serif;
+    padding: 10px 0;
+}
+
+/* Links styling */
+a {
+    color: #4a90e2; /* Light blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Mobile menu styles */
 #mobile-menu {
-    display: none;
     position: absolute;
-    top: 60px;
+    top: 100%; /* Expand downward from the header */
     left: 0;
-    width: 100%;
-    background-color: rgba(139, 90, 43, 0.8); /* Match header color with transparency */
-    color: #fff;
-    padding: 10px;
+    width: 100%; /* Full width of the header */
+    background-color: #d9e2e6; /* Light gray stone background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+    display: none; /* Initially hidden */
     z-index: 1000;
 }
 
+#mobile-menu.visible {
+    display: block; /* Show menu when toggled */
+}
+
 #mobile-menu ul {
-    padding: 0;
     margin: 0;
+    padding: 0;
     list-style: none;
 }
 
 #mobile-menu ul li {
-    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #b0b8bc; /* Subtle border for separation */
     text-align: center;
 }
 
@@ -101,24 +126,26 @@ footer {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.44rem; /* Increase font size by 20% */
+    font-size: 1.2rem;
 }
 
-#mobile-menu.visible {
-    display: block;
-}
-
-/* Style for menu button */
+/* Hide menu button by default */
 #menu-button {
-    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Align menu button to the left */
+    z-index: 1001;
+    color: #fff; /* Ensure menu button is visible */
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 1.2em;
     cursor: pointer;
-    color: #fff; /* Match header text color */
-    position: absolute;
-    top: 20px;
-    left: 20px; /* Position in the top-left corner */
+    display: none;
+}
+
+/* Ensure the font in menus matches the text */
+#desktop-menu ul {
+    font-family: Arial, sans-serif; /* Ensure the font in desktop menu matches the text */
 }
 
 /* Responsive styles */
@@ -142,11 +169,11 @@ footer {
     }
 
     h2 {
-        font-size: 2.4rem; /* Increase font size by 20% */
+        font-size: 1.8rem; /* Slightly smaller titles for mobile */
     }
 
     p {
-        font-size: 1.32rem; /* Increase font size by 20% */
+        font-size: 1rem; /* Adjust text size for readability on mobile */
     }
 
     nav.menu {
@@ -203,8 +230,6 @@ html {
     padding: 0.8rem 1.5rem;
     cursor: pointer;
     border-radius: 8px;
-    font-family: 'Arial', sans-serif; /* Match body font for consistency */
-    font-size: 1.2rem; /* Increase font size by 20% */
 }
 
 #carousel-left:hover,
