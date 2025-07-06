@@ -9,7 +9,15 @@
 <body>
     <header>
         <h1>Atelier Nirvan</h1>
-        <nav>
+        <button id="menu-button">☰</button>
+        <nav id="mobile-menu">
+            <ul>
+                <li><a href="#about">O nás</a></li>
+                <li><a href="#services">Služby</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+        <nav id="desktop-menu">
             <ul>
                 <li><a href="#about">O nás</a></li>
                 <li><a href="#services">Služby</a></li>
@@ -79,5 +87,23 @@
     <footer>
         <p>&copy; 2023 Atelier Nirvan</p>
     </footer>
+    <script>
+        // Smooth scrolling for section navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Toggle mobile menu visibility
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('visible');
+        });
+    </script>
 </body>
 </html>
