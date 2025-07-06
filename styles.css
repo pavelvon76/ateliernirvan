@@ -3,13 +3,13 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.8;
-    background-color: #f5f5dc; /* Light beige for a natural feel */
-    color: #4b3f2f; /* Dark brown for text */
+    background-color: rgba(245, 245, 220, 0.8); /* Light beige with transparency */
+    color: rgba(75, 63, 47, 0.9); /* Dark brown with slight transparency */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
-    background: #8b5a2b; /* Warm wooden brown */
+    background: rgba(139, 90, 43, 0.8); /* Warm wooden brown with transparency */
     color: #fff;
     padding: 2rem 0;
     text-align: center;
@@ -44,11 +44,11 @@ section {
 }
 
 section:nth-child(odd) {
-    background-color: #fff8dc; /* Light cream for alternating sections */
+    background-color: rgba(255, 248, 220, 0.7); /* Light cream with transparency */
 }
 
 section:nth-child(even) {
-    background-color: #f5f5dc; /* Light beige for alternating sections */
+    background-color: rgba(245, 245, 220, 0.7); /* Light beige with transparency */
 }
 
 h2 {
@@ -67,7 +67,7 @@ p {
 footer {
     text-align: center;
     padding: 2rem 0;
-    background: #8b5a2b;
+    background: rgba(139, 90, 43, 0.8); /* Warm brown with transparency */
     color: #fff;
     font-family: 'Playfair Display', serif;
 }
@@ -79,7 +79,7 @@ footer {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #8b5a2b; /* Match header color */
+    background-color: rgba(139, 90, 43, 0.8); /* Match header color with transparency */
     color: #fff;
     padding: 10px;
     z-index: 1000;
@@ -196,7 +196,7 @@ html {
 
 #carousel-left,
 #carousel-right {
-    background: #8b5a2b;
+    background: rgba(139, 90, 43, 0.8); /* Warm brown with transparency */
     color: #fff;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -207,5 +207,5 @@ html {
 
 #carousel-left:hover,
 #carousel-right:hover {
-    background: #a67c52; /* Slightly lighter brown for hover effect */
+    background: rgba(166, 124, 82, 0.8); /* Slightly lighter brown with transparency for hover effect */
 }
