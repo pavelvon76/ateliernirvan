@@ -12,14 +12,14 @@
         <button id="menu-button">☰</button>
         <nav id="mobile-menu">
             <ul>
-                <li><a href="#about">O nás</a></li>
+                <li><a href="#about">O mě</a></li>
                 <li><a href="#services">Služby</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
         </nav>
         <nav id="desktop-menu">
             <ul>
-                <li><a href="#about">O nás</a></li>
+                <li><a href="#about">O mě</a></li>
                 <li><a href="#services">Služby</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
@@ -27,32 +27,16 @@
     </header>
     <main>
         <section id="about">
-            <h2>O nás</h2>
-            <p>Hire for attitude
-                - Look for people who share your values and enthusiasm. Skills can be taught-
-                mindset can't
-                
-                Trust your people from day one
-                - If you wait for them to "earn" it, you're starting off on the wrong foot. Genuine
-                trust fuels creativity and accountability.
-                
-                Set your expectations
-                - Clarity in goals eliminates guesswork and ensures everyone knows what
-                success looks like.
-                
-                Set them up for success
-                - You can't expect great work if you don't give your team the support and
-                resources they need to succeed.
-                
-                Let them get on with it
-                - Micromanagement kills motivation. Give people the freedom to innovate, and
-                they'll surprise you with what they can accomplish
-                
-                Measure outcomes, not attendance.
-                Value impact over hours worked.
-                
-                Trust the talent you hired
-                And watch them flourish.</p>
+            <h2>O mně</h2>
+            <p id="about-summary">
+                Masážím jsem se začal věnovat už v patnácti letech kvůli chronickým bolestem zad mého otce a vlastnímu kolapsu, který mě přiměl ke změně životního směru. Postupně jsem absolvoval masérské i jógové kurzy a objevil hlubší propojení těla, dechu a duševní rovnováhy. Ve své praxi kombinuji různé terapeutické techniky a ke každému klientovi přistupuji individuálně podle jeho potřeb.
+            </p>
+            <p id="about-full" style="display: none;">
+                Masážím jsem se začal věnovat už v patnácti letech, a to díky chronickým bolestem zad mého otce. Ačkoli jsem celý život aktivně sportoval, s přibývajícím věkem a pracovním vytížením se u mě objevily zdravotní potíže. První kolaps, který jsem vnímal jako varovný signál, se pro mě stal zásadním zlomem – rozhodl jsem se, že bude poslední, a že ve svém životě udělám radikální změnu.
+                Zapsal jsem se na svůj první masérský kurz, který se brzy rozšířil o další specializace. Postupně jsem si uvědomil, že právě tato práce mě skutečně naplňuje. Významný posun v porozumění lidskému tělu i duši pro mě představovalo také absolvování kurzu pro učitele jógy. Tam mi začaly do sebe zapadat hlubší souvislosti mezi pohybem a klidem, dechovými technikami, meditací i duševní a fyzickou rovnováhou. Zde jsem také přijal od svého indického učitele jméno Nirvan.
+                Ve své praxi kombinuji různé terapeutické přístupy – od klasických masáží, přes práci s trigger points, reflexní masáže, flossing, tejpování, baňkování, až po dechová cvičení a meditační techniky. Vždy přistupuji ke klientovi individuálně, podle jeho aktuálního stavu a potřeb.
+            </p>
+            <button id="about-toggle">Zobrazit více</button>
         </section>
         <section id="services">
             <h2>Služby</h2>
@@ -103,6 +87,21 @@
         const mobileMenu = document.getElementById('mobile-menu');
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('visible');
+        });
+
+        // Toggle "about" section visibility
+        const aboutToggle = document.getElementById('about-toggle');
+        const aboutFull = document.getElementById('about-full');
+        const aboutSummary = document.getElementById('about-summary');
+
+        aboutToggle.addEventListener('click', () => {
+            if (aboutFull.style.display === 'none') {
+                aboutFull.style.display = 'block';
+                aboutToggle.textContent = 'Zobrazit méně';
+            } else {
+                aboutFull.style.display = 'none';
+                aboutToggle.textContent = 'Zobrazit více';
+            }
         });
     </script>
 </body>
