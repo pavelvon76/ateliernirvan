@@ -1,15 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lora', serif; /* Elegant serif font for readability */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.8;
+    background-color: #f5f5dc; /* Light beige for a natural feel */
+    color: #4b3f2f; /* Dark brown for text */
 }
 
 header {
-    background: #333;
+    background: #8b5a2b; /* Warm wooden brown */
     color: #fff;
-    padding: 1rem 0;
+    padding: 2rem 0;
     text-align: center;
+    font-family: 'Playfair Display', serif; /* Decorative font for headers */
 }
 
 nav ul {
@@ -19,27 +22,51 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 main {
-    padding: 2rem;
+    padding: 0;
 }
 
 section {
-    margin-bottom: 2rem;
+    padding: 3rem 5%;
+    width: 100%;
+}
+
+section:nth-child(odd) {
+    background-color: #fff8dc; /* Light cream for alternating sections */
+}
+
+section:nth-child(even) {
+    background-color: #f5f5dc; /* Light beige for alternating sections */
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #8b5a2b; /* Warm brown for section titles */
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+p {
+    font-family: 'Lora', serif;
+    color: #4b3f2f;
+    font-size: 1.1rem;
 }
 
 footer {
     text-align: center;
-    padding: 1rem 0;
-    background: #333;
+    padding: 2rem 0;
+    background: #8b5a2b;
     color: #fff;
+    font-family: 'Playfair Display', serif;
 }
 
 /* Hide mobile menu by default */
@@ -49,7 +76,6 @@ footer {
     top: 60px;
     left: 10px;
     background-color: white;
-    border: 1px solid #ccc;
     padding: 10px;
     z-index: 1000;
 }
@@ -76,6 +102,12 @@ footer {
     #menu-button {
         display: block;
     }
+
+    #carousel-controls {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
 
 /* Smooth scrolling behavior */
@@ -88,7 +120,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 #carousel-items {
@@ -102,38 +134,29 @@ html {
 .carousel-item {
     display: none;
     margin: 0 auto;
-    background: #f9f9f9;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 300px;
+    background: #fff8dc;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
 }
 
 #carousel-controls {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 #carousel-left,
 #carousel-right {
-    background: #333;
+    background: #8b5a2b;
     color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-family: 'Lora', serif;
 }
 
 #carousel-left:hover,
 #carousel-right:hover {
-    background: #555;
-}
-
-/* Responsive styles for swipe functionality */
-@media (max-width: 768px) {
-    #carousel-controls {
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 10px;
-    }
+    background: #a67c52; /* Slightly lighter brown for hover effect */
 }
