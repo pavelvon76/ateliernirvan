@@ -82,3 +82,42 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+/* Carousel styles */
+#carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#carousel-items {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 80%;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 300px; /* Adjust width as needed */
+    margin: 0 10px;
+    background: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#carousel-left,
+#carousel-right {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#carousel-left:hover,
+#carousel-right:hover {
+    background: #555;
+}
