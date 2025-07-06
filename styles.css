@@ -69,15 +69,35 @@ footer {
     font-family: 'Playfair Display', serif;
 }
 
-/* Hide mobile menu by default */
+/* Mobile menu styles */
 #mobile-menu {
     display: none;
     position: absolute;
     top: 60px;
-    left: 10px;
-    background-color: white;
+    left: 0;
+    width: 100%;
+    background-color: #8b5a2b; /* Match header color */
+    color: #fff;
     padding: 10px;
     z-index: 1000;
+}
+
+#mobile-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#mobile-menu ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#mobile-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 #mobile-menu.visible {
@@ -91,6 +111,7 @@ footer {
     border: none;
     font-size: 24px;
     cursor: pointer;
+    color: #fff; /* Match header text color */
 }
 
 /* Responsive styles */
