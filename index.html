@@ -11,13 +11,13 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Adjust mobile menu to stay on the right and expand vertically */
+        /* Adjust mobile menu position below the header title */
         #mobile-menu {
-            position: fixed;
-            top: 0;
+            position: absolute;
+            top: 60px; /* Adjust based on header height */
             right: 0;
             width: 250px;
-            height: 100%;
+            height: calc(100% - 60px); /* Adjust height to exclude header */
             background-color: #fff;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
             overflow-y: auto; /* Enable scrolling if content exceeds height */
@@ -41,7 +41,7 @@
         }
 
         #menu-button {
-            position: fixed;
+            position: absolute;
             top: 10px;
             right: 10px;
             z-index: 1000;
@@ -51,10 +51,16 @@
         #desktop-menu ul {
             font-family: Arial, sans-serif;
         }
+
+        header {
+            position: relative;
+            z-index: 1001; /* Ensure header stays above the menu */
+        }
     </style>
 </head>
 <body>
     <header>
+        <h1>Atelier Nirvan</h1>
         <button id="menu-button">☰</button>
         <nav id="mobile-menu">
             <ul>
@@ -66,7 +72,6 @@
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
         </nav>
-        <h1>Atelier Nirvan</h1>
         <nav id="desktop-menu">
             <ul>
                 <li><a href="#home">Domů</a></li>
