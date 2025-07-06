@@ -97,9 +97,11 @@
         aboutToggle.addEventListener('click', () => {
             if (aboutFull.style.display === 'none') {
                 aboutFull.style.display = 'block';
+                 aboutSummary.style.display = 'none';
                 aboutToggle.textContent = 'Zobrazit méně';
             } else {
                 aboutFull.style.display = 'none';
+                aboutSummary.style.display = 'block';
                 aboutToggle.textContent = 'Zobrazit více';
             }
         });
