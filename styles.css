@@ -5,6 +5,7 @@ body {
     line-height: 1.8;
     background-color: #f5f5dc; /* Light beige for a natural feel */
     color: #4b3f2f; /* Dark brown for text */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -38,6 +39,7 @@ main {
 section {
     padding: 3rem 5%;
     width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
 }
 
 section:nth-child(odd) {
@@ -128,6 +130,18 @@ footer {
         flex-direction: row;
         justify-content: center;
         margin-top: 10px;
+    }
+
+    section {
+        padding: 2rem 5%; /* Adjust padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Slightly smaller titles for mobile */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust text size for readability on mobile */
     }
 }
 
