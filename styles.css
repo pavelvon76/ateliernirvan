@@ -132,6 +132,8 @@ html {
 /* Responsive styles for swipe functionality */
 @media (max-width: 768px) {
     #carousel-controls {
-        display: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 10px;
     }
 }
