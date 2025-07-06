@@ -147,6 +147,16 @@ footer {
     p {
         font-size: 1rem; /* Adjust text size for readability on mobile */
     }
+
+    nav.menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav.menu li {
+        display: block;
+        width: 100%;
+    }
 }
 
 /* Smooth scrolling behavior */
