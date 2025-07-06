@@ -10,37 +10,39 @@ body {
 }
 
 header {
-    position: relative;
-    z-index: 1002; /* Ensure header stays above the menu */
+    position: fixed; /* Make header fixed at the top */
     top: 0;
     left: 0;
     width: 100%;
     background-color: #8fa998; /* Light pine green background */
-    color: #000; /* White text for visibility */
+    color: #000; /* Ensure text color is black */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 20px; /* Add padding for better spacing */
-    text-align: center;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Space items evenly */
     font-family: Arial, sans-serif;
+    z-index: 1002; /* Ensure header stays above other elements */
 }
 
-header h1,
 #siteName {
     margin: 0;
     font-size: 1.5em; /* Adjust font size for readability */
-    color: #000; /* White text for visibility */
+    color: #000; /* Ensure text color is black */
 }
 
-nav ul {
+#desktop-menu {
+    margin: 0;
+}
+
+#desktop-menu ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Align menu items horizontally */
+    gap: 15px; /* Add spacing between menu items */
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
+#desktop-menu ul li a {
     color: #000;
     text-decoration: none;
     font-weight: bold;
@@ -95,6 +97,7 @@ a:hover {
 
 /* Mobile menu styles */
 #mobile-menu {
+    display: none; /* Hide mobile menu when not visible */
     position: absolute;
     top: 100%; /* Expand downward from the header */
     left: 0;
@@ -102,7 +105,6 @@ a:hover {
     background-color: #d9e2e6; /* Light gray stone background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     overflow-y: auto; /* Enable scrolling if content exceeds height */
-    display: none; /* Initially hidden */
     z-index: 1000;
 }
 
@@ -110,44 +112,12 @@ a:hover {
     display: block; /* Show menu when toggled */
 }
 
-#mobile-menu ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-#mobile-menu ul li {
-    padding: 10px;
-    border-bottom: 1px solid #b0b8bc; /* Subtle border for separation */
-    text-align: center;
-}
-
-#mobile-menu ul li a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-#menu-button {
-    position: absolute;
-    top: 10px;
-    left: 10px; /* Align menu button to the left */
-    z-index: 1001;
-    color: #000; /* Ensure menu button is visible */
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-/* Ensure the font in menus matches the text */
-#desktop-menu ul {
-    font-family: Arial, sans-serif; /* Ensure the font in desktop menu matches the text */
-}
-
-/* Responsive styles */
+/* Ensure no white space appears when the mobile menu is hidden */
 @media (max-width: 768px) {
+    #mobile-menu {
+        display: none; /* Ensure hidden menu does not affect layout */
+    }
+
     #desktop-menu {
         display: none;
     }
