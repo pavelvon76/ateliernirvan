@@ -20,7 +20,7 @@ header {
     padding: 10px 20px; /* Add padding for better spacing */
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Vertically align items */
-    justify-content: space-between; /* Space items evenly */
+    justify-content:space-between; /* Space items evenly */
     font-family: Arial, sans-serif;
     z-index: 1002; /* Ensure header stays above other elements */
 }
@@ -29,10 +29,17 @@ header {
     margin: 0;
     font-size: 1.5em; /* Adjust font size for readability */
     color: #000; /* Ensure text color is black */
+    align-items:flex-start;
+    padding-left: 20px;
+    padding-right: 60px;
+    font-weight: bold;
 }
 
 #desktop-menu {
     margin: 0;
+    align-items: flex-end;
+    padding-right: 40px; /* Add padding to the right for spacing */
+    font-size: 1.5em; /* Adjust font size for readability */
 }
 
 #desktop-menu ul {
@@ -45,7 +52,6 @@ header {
 #desktop-menu ul li a {
     color: #000;
     text-decoration: none;
-    font-weight: bold;
 }
 
 main {
@@ -98,7 +104,6 @@ a:hover {
 /* Mobile menu styles */
 #mobile-menu {
     display: none; /* Hide mobile menu when not visible */
-    position: absolute;
     top: 100%; /* Expand downward from the header */
     left: 0;
     width: 100%; /* Full width of the header */
