@@ -10,17 +10,17 @@ body {
 }
 
 header {
-    position: relative;
-    z-index: 1002; /* Ensure header stays above the menu */
+    position: fixed; /* Make header fixed at the top */
     top: 0;
     left: 0;
     width: 100%;
     background-color: #8fa998; /* Light pine green background */
-    color: #fff; /* White text for visibility */
+    color: #000; /* Change text color to black */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 20px; /* Add padding for better spacing */
     text-align: center;
     font-family: Arial, sans-serif;
+    z-index: 1002; /* Ensure header stays above other elements */
 }
 
 header h1,
@@ -47,7 +47,7 @@ nav ul li a {
 }
 
 main {
-    margin-top: 60px; /* Adjust based on header height */
+    margin-top: 60px; /* Adjust main content to account for fixed header height */
     padding: 0;
 }
 
