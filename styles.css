@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f4f8; /* Light blue sky background */
-    color: #333; /* Neutral text color for readability */
+    color: #000; /* Neutral text color for readability */
     margin: 0;
     padding: 0;
     line-height: 1.8;
@@ -78,14 +78,14 @@ p {
 
 footer {
     background-color: #d9e2e6; /* Light gray stone background */
-    color: #333; /* Neutral text color */
+    color: #000; /* Neutral text color */
     text-align: center;
     padding: 10px 0;
 }
 
 /* Links styling */
 a {
-    color: #4a90e2; /* Light blue for links */
+    color: #000; /* Light blue for links */
     text-decoration: none;
 }
 
