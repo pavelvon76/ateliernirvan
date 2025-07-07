@@ -1,95 +1,143 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier Nirvan</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="function.js" defer></script>
-</head>
-<body>
-    <header>
-        <button id="menu-button">☰</button>
-        <div id="siteName">Atelier Nirvan</div>
-        <nav id="mobile-menu">
-            <ul onclick="collapseMobileMenu()">
-                <li><a href="#home">Domů</a></li>
-                <li><a href="#references">Reference</a></li>
-                <li><a href="#yoga">Jóga</a></li>
-                <li><a href="#therapy">Terapie</a></li>
-                <li><a href="#about">O mě</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-        <nav id="desktop-menu">
-            <ul onclick="collapseMobileMenu()">
-                <li><a href="#home">Domů</a></li>
-                <li><a href="#references">Reference</a></li>
-                <li><a href="#yoga">Jóga</a></li>
-                <li><a href="#therapy">Terapie</a></li>
-                <li><a href="#about">O mě</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Proč jsi přišel na tyto stránky</h2>
-            <p>Mám potíže s výhřezem ploténky v bederní / krční části páteře, dokážeš mi pomoci?
-                Nemohu hýbat ramenem, nezvednu ruku nad úroveň ramene, dokážeš mi pomoci?
-                Řekli mi, že mám syndrom zmrzlého ramene, umíš s tím něco udělat?
-                Už jsem absolvoval vyšetření všeho druhu, podle všeho jsem úplně zdravý. Nikdo mi ale nedokáže efektivně pomoci s mým bolením hlavy a už nechci stále brát léky. Pomohl bys mi s tím?
-                Odpověď na tyto a obdobné otázky zní ANO. Tomu se věnuji. Vždy individuálně na základě aktuálního stavu, věku, schopností a fyzických možností klienta.
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atelier Nirvan</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="function.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <button id="menu-button">☰</button>
+            <div id="siteName">Atelier Nirvan</div>
+            <nav id="mobile-menu">
+                <ul onclick="collapseMobileMenu()">
+                    <li><a href="#home">Domů</a></li>
+                    <li><a href="#references">Reference</a></li>
+                    <li><a href="#yoga">Jóga</a></li>
+                    <li><a href="#therapy">Terapie</a></li>
+                    <li><a href="#about">O mě</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <nav id="desktop-menu">
+                <ul onclick="collapseMobileMenu()">
+                    <li><a href="#home">Domů</a></li>
+                    <li><a href="#references">Reference</a></li>
+                    <li><a href="#yoga">Jóga</a></li>
+                    <li><a href="#therapy">Terapie</a></li>
+                    <li><a href="#about">O mě</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <h2>Proč jsi přišel na tyto stránky</h2>
+                <p>Mám potíže s výhřezem ploténky v bederní / krční části
+                    páteře, dokážeš mi pomoci?
+                    Nemohu hýbat ramenem, nezvednu ruku nad úroveň ramene,
+                    dokážeš mi pomoci?
+                    Řekli mi, že mám syndrom zmrzlého ramene, umíš s tím něco
+                    udělat?
+                    Už jsem absolvoval vyšetření všeho druhu, podle všeho jsem
+                    úplně zdravý. Nikdo mi ale nedokáže efektivně pomoci s mým
+                    bolením hlavy a už nechci stále brát léky. Pomohl bys mi s
+                    tím?
+                    Odpověď na tyto a obdobné otázky zní ANO. Tomu se věnuji.
+                    Vždy individuálně na základě aktuálního stavu, věku,
+                    schopností a fyzických možností klienta.
                 </p>
-                <p>Ve své praxi kombinuji různé terapeutické přístupy – od klasických masáží, přes práci s trigger points, reflexní masáže, flossing, tejpování, baňkování, až po dechová cvičení a meditační techniky. Vždy přistupuji ke klientovi individuálně, podle jeho aktuálního stavu a potřeb.</p>
-        </section>
-        <section id="references">
-            <h2>Řekli o mě</h2>
-            <div id="carousel">
-                <div id="carousel-items"></div>
-                <div id="carousel-controls">
-                    <button id="carousel-left">&lt;</button>
-                    <button id="carousel-right">&gt;</button>
+                <p>Ve své praxi kombinuji různé terapeutické přístupy – od
+                    klasických masáží, přes práci s trigger points, reflexní
+                    masáže, flossing, tejpování, baňkování, až po dechová
+                    cvičení a meditační techniky. Vždy přistupuji ke klientovi
+                    individuálně, podle jeho aktuálního stavu a potřeb.</p>
+            </section>
+            <section id="references">
+                <h2>Řekli o mě</h2>
+                <div id="carousel">
+                    <div id="carousel-items"></div>
+                    <div id="carousel-controls">
+                        <button id="carousel-left">&lt;</button>
+                        <button id="carousel-right">&gt;</button>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="yoga">
-            <h2>Jóga</h2>
-            <p>Při výuce jógy vycházím ze základů Hatha jógy a Fyziojógy se zaměřením na správnost detailu každého pohybu, závislostí pohybu a dechu včetně relaxace a meditace, vše směřující k uvolnění a posílení těla i mysli.</p>
-            <ul>
-                <li><a href="#individual-courses">Individuální kurzy při specifických pohybových obtížích</a></li>
-                <li><a href="#pair-courses">Kurzy pro dvojice</a></li>
-                <li><a href="#group-courses">Kurzy malých skupin</a></li>
-                <li><a href="#beginner-courses">Kurzy pro začátečníky</a></li>
-                <li><a href="#advanced-courses">Kurzy pro pokročilé</a></li>
-            </ul>
-        </section>
-        <section id="therapy">
-            <h2>Terapie</h2>
-            <p>Při zákrocích používám masážních manuálních technik, techniku spoušťových bodů, reflexní masáže, baňkování i tejpování. U dechových praktik vycházím z jógových technik pranajámy, s využitím dalších poznatků tohoto rozsáhlého oboru , kde odpovědi hledám u Jamese Nestora, Vima Hofa, Patricka Mc Keowna, nebo Yvana Cama. Závislosti dechu a energie, dechu a psychiky, dechu a potíží respiračního systému, i dechu a fyzického výkonu tvoří zásadní podklad pro správnou funkci celého organismu.</p>
-        </section>
-        <section id="about">
-            <h2>O mě</h2>
-            <p id="about-summary">
-                Masážím jsem se začal věnovat už v patnácti letech kvůli chronickým bolestem zad mého otce a vlastnímu kolapsu, který mě přiměl ke změně životního směru. Postupně jsem absolvoval masérské i jógové kurzy a objevil hlubší propojení těla, dechu a duševní rovnováhy. Ve své praxi kombinuji různé terapeutické techniky a ke každému klientovi přistupuji individuálně podle jeho potřeb.
-            </p>
-            <p id="about-full" style="display: none;">
-                Masážím jsem se začal věnovat už v patnácti letech, a to díky chronickým bolestem zad mého otce. Ačkoli jsem celý život aktivně sportoval, s přibývajícím věkem a pracovním vytížením se u mě objevily zdravotní potíže. První kolaps, který jsem vnímal jako varovný signál, se pro mě stal zásadním zlomem – rozhodl jsem se, že bude poslední, a že ve svém životě udělám radikální změnu.
-                Zapsal jsem se na svůj první masérský kurz, který se brzy rozšířil o další specializace. Postupně jsem si uvědomil, že právě tato práce mě skutečně naplňuje. Významný posun v porozumění lidskému tělu i duši pro mě představovalo také absolvování kurzu pro učitele jógy. Tam mi začaly do sebe zapadat hlubší souvislosti mezi pohybem a klidem, dechovými technikami, meditací i duševní a fyzickou rovnováhou. Zde jsem také přijal od svého indického učitele jméno Nirvan.
-                Ve své praxi kombinuji různé terapeutické přístupy – od klasických masáží, přes práci s trigger points, reflexní masáže, flossing, tejpování, baňkování, až po dechová cvičení a meditační techniky. Vždy přistupuji ke klientovi individuálně, podle jeho aktuálního stavu a potřeb.
-            </p>
-            <button id="about-toggle">Zobrazit více</button>
-        </section>
-        <section id="contact">
-            <h2>Kontakt</h2>
-            <p>V aleji 40, 620 00 Brno</p>
-            <p>Kontaktujte nás na emailu: info@ateliernirvan.cz</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Atelier Nirvan</p>
-    </footer>
-    <script>
+            </section>
+            <section id="yoga">
+                <h2>Jóga</h2>
+                <p>Při výuce jógy vycházím ze základů Hatha jógy a Fyziojógy se
+                    zaměřením na správnost detailu každého pohybu, závislostí
+                    pohybu a dechu včetně relaxace a meditace, vše směřující k
+                    uvolnění a posílení těla i mysli.</p>
+                <ul>
+                    <li><a href="#individual-courses">Individuální kurzy při
+                            specifických pohybových obtížích</a></li>
+                    <li><a href="#pair-courses">Kurzy pro dvojice</a></li>
+                    <li><a href="#group-courses">Kurzy malých skupin</a></li>
+                    <li><a href="#beginner-courses">Kurzy pro
+                            začátečníky</a></li>
+                    <li><a href="#advanced-courses">Kurzy pro pokročilé</a></li>
+                </ul>
+            </section>
+            <section id="therapy">
+                <h2>Terapie</h2>
+                <p>Při zákrocích používám masážních manuálních technik, techniku
+                    spoušťových bodů, reflexní masáže, baňkování i tejpování. U
+                    dechových praktik vycházím z jógových technik pranajámy, s
+                    využitím dalších poznatků tohoto rozsáhlého oboru , kde
+                    odpovědi hledám u Jamese Nestora, Vima Hofa, Patricka Mc
+                    Keowna, nebo Yvana Cama. Závislosti dechu a energie, dechu a
+                    psychiky, dechu a potíží respiračního systému, i dechu a
+                    fyzického výkonu tvoří zásadní podklad pro správnou funkci
+                    celého organismu.</p>
+            </section>
+            <section id="about">
+                <h2>O mě</h2>
+                <p id="about-summary">
+                    Masážím jsem se začal věnovat už v patnácti letech kvůli
+                    chronickým bolestem zad mého otce a vlastnímu kolapsu, který
+                    mě přiměl ke změně životního směru. Postupně jsem absolvoval
+                    masérské i jógové kurzy a objevil hlubší propojení těla,
+                    dechu a duševní rovnováhy. Ve své praxi kombinuji různé
+                    terapeutické techniky a ke každému klientovi přistupuji
+                    individuálně podle jeho potřeb.
+                </p>
+                <p id="about-full" style="display: none;">
+                    Masážím jsem se začal věnovat už v patnácti letech, a to
+                    díky chronickým bolestem zad mého otce. Ačkoli jsem celý
+                    život aktivně sportoval, s přibývajícím věkem a pracovním
+                    vytížením se u mě objevily zdravotní potíže. První kolaps,
+                    který jsem vnímal jako varovný signál, se pro mě stal
+                    zásadním zlomem – rozhodl jsem se, že bude poslední, a že ve
+                    svém životě udělám radikální změnu.
+                    Zapsal jsem se na svůj první masérský kurz, který se brzy
+                    rozšířil o další specializace. Postupně jsem si uvědomil, že
+                    právě tato práce mě skutečně naplňuje. Významný posun v
+                    porozumění lidskému tělu i duši pro mě představovalo také
+                    absolvování kurzu pro učitele jógy. Tam mi začaly do sebe
+                    zapadat hlubší souvislosti mezi pohybem a klidem, dechovými
+                    technikami, meditací i duševní a fyzickou rovnováhou. Zde
+                    jsem také přijal od svého indického učitele jméno Nirvan.
+                    Ve své praxi kombinuji různé terapeutické přístupy – od
+                    klasických masáží, přes práci s trigger points, reflexní
+                    masáže, flossing, tejpování, baňkování, až po dechová
+                    cvičení a meditační techniky. Vždy přistupuji ke klientovi
+                    individuálně, podle jeho aktuálního stavu a potřeb.
+                </p>
+                <button id="about-toggle">Zobrazit více</button>
+            </section>
+            <section id="contact">
+                <h2>Kontakt</h2>
+                <p>V aleji 40, 620 00 Brno</p>
+                <p>Kontaktujte nás na emailu: info@ateliernirvan.cz</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Atelier Nirvan</p>
+        </footer>
+        <script>
         // Smooth scrolling for section navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -130,33 +178,57 @@
             }
         });
 
-        // Load references from JSON file
+        // Záložní reference pro případ fetch chyby
+        const fallbackReferences = [
+           {text: "Tondo, ty seš fakt šaman. Už půl roku nemůžu v noci spát, podkládám si všelijak ruku i rameno, abych si aspoň trochu ulevila. Teď jsem spala poprvé celou noc. To je neuvěřitelný pocit.",
+             author: "Margareta Janjic"
+    },
+    {
+        text: "Ahoj, hybnost ruky je teď mnohem lepší a ty svaly mě nebolí, tak jak jsem čekala. Moc děkuji, nečekala jsem takový pokrok.",
+        author: "Milena Bartíková"
+    },
+    {
+        text: "Díky Tondo, mé problémy s výhřezem v bederní páteři se začaly zlepšovat už po první návštěvě u tebe. Teď po čtyřech našich setkáních už jsem úplně bez potíží.",
+        author: "Milan Číž"
+    },
+    {
+        text: "Pane Vondruško, musím se Vám pochlubit. Dřív jsem nemohl skoro vůbec chodit. Když jsem šel do garáže, kterou mám půl kilometru daleko, musel jsem si třikrát sednout. Teď jsem byl se ženou na výletě, vůbec mi nestačila a to jsme ušli tři kilometry!",
+        author: "Stanislav Merta"
+    },
+    {
+        text: "Tondo, když se mi podařil výhřez v krční páteři, už jsem věděla za kým mám, po úspěšném vyléčení ramene, jít. A i teď jsem úplně nedůvěřovala, když jsme začali jenom dýcháním. Ale teď už vím, že to byl správný postup a dostali jsme se přes různé uvolňování, rozhýbávání a cvičení až ke stavu, kdy se zase hýbu normálně.",
+        author: "Margareta Janjic"
+    }
+        ];
+
+        // Load references from JSON file nebo fallback
         async function loadReferences() {
+            const carouselItems = document.getElementById('carousel-items');
             try {
                 const response = await fetch('references.json');
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch references: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`Failed to fetch references: ${response.status}`);
                 const references = await response.json();
-                const carouselItems = document.getElementById('carousel-items');
-
                 if (references.length === 0) {
                     carouselItems.innerHTML = '<p>No references available.</p>';
                     return;
                 }
-
                 references.forEach(reference => {
                     const item = document.createElement('div');
                     item.className = 'carousel-item';
                     item.innerHTML = `<p>${reference.text}</p><i>${reference.author}</i>`;
                     carouselItems.appendChild(item);
                 });
-
                 updateCarousel();
             } catch (error) {
-                console.error('Error loading references:', error);
-                const carouselItems = document.getElementById('carousel-items');
-                carouselItems.innerHTML = '<p>Error loading references. Please try again later.</p>';
+                console.warn('Error loading references, using fallback:', error);
+                carouselItems.innerHTML = '';
+                fallbackReferences.forEach(reference => {
+                    const item = document.createElement('div');
+                    item.className = 'carousel-item';
+                    item.innerHTML = `<p>${reference.text}</p><i>${reference.author}</i>`;
+                    carouselItems.appendChild(item);
+                });
+                updateCarousel();
             }
         }
 
@@ -205,5 +277,5 @@
         // Initialize carousel
         document.addEventListener('DOMContentLoaded', loadReferences);
     </script>
-</body>
+    </body>
 </html>
