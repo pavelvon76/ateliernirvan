@@ -8,7 +8,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
+// Function to collapse the mobile menu
+function collapseMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.remove('visible'); // Ensure the menu is hidden
+}
 
 // Toggle mobile menu visibility
 const menuButton = document.getElementById('menu-button');
@@ -16,21 +20,6 @@ const mobileMenu = document.getElementById('mobile-menu');
 menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('visible');
 });
-
-// Collapse mobile menu when a menu item is clicked
-document.querySelectorAll('#mobile-menu a').forEach(menuItem => {
-    menuItem.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent default anchor behavior
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
-        }
-        collapseMobileMenu(); // Call the collapse function
-    });
-});
-
-// Ensure the collapseMobileMenu function is globally accessible
-window.collapseMobileMenu = collapseMobileMenu;
 
 // Toggle "about" section visibility
 const aboutToggle = document.getElementById('about-toggle');
@@ -51,30 +40,24 @@ aboutToggle.addEventListener('click', () => {
 
 // Load references from JSON file
 async function loadReferences() {
+    const carouselItems = document.getElementById('carousel-items');
     try {
         const response = await fetch('references.json');
-        if (!response.ok) {
-            throw new Error(`Failed to fetch references: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`Failed to fetch references: ${response.status}`);
         const references = await response.json();
-        const carouselItems = document.getElementById('carousel-items');
-
         if (references.length === 0) {
             carouselItems.innerHTML = '<p>No references available.</p>';
             return;
         }
-
         references.forEach(reference => {
             const item = document.createElement('div');
             item.className = 'carousel-item';
             item.innerHTML = `<p>${reference.text}</p><i>${reference.author}</i>`;
             carouselItems.appendChild(item);
         });
-
         updateCarousel();
     } catch (error) {
         console.error('Error loading references:', error);
-        const carouselItems = document.getElementById('carousel-items');
         carouselItems.innerHTML = '<p>Error loading references. Please try again later.</p>';
     }
 }
